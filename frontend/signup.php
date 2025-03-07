@@ -1,7 +1,7 @@
 <?php
 // Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 // Database connection
 $host = "localhost";
@@ -35,8 +35,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_stmt->store_result();
 
     if ($check_stmt->num_rows > 0) {
-        // User already exists
-        echo "<script>alert('User already registered! Redirecting to login...'); window.location.href='login.html';</script>";
+        // User already exists - Show message and redirect
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">User already registered! Redirecting to login...</div>';
+                setTimeout(function() {
+                    window.location.href = 'login.html';
+                }, 1000);
+            });
+        </script>";
         exit;
     }
 
@@ -52,13 +59,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $user, $email, $plain_password);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Signup successful! Redirecting to login...'); window.location.href='login.html';</script>";
+        // Signup successful - Show message and redirect
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Signup successful! Redirecting to login...</div>';
+                setTimeout(function() {
+                    window.location.href = 'login.html';
+                }, 1000);
+            });
+        </script>";
     } else {
-        echo "<script>alert('Error in registration! Please try again.'); window.history.back();</script>";
+        // Error - Show message and redirect back
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Error in registration! Please try again.</div>';
+                setTimeout(function() {
+                    window.history.back();
+                }, 1000);
+            });
+        </script>";
     }
 
     // Close statements and connection
     $stmt->close();
     $conn->close();
 }
+
 ?>

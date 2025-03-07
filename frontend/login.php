@@ -39,15 +39,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["user_id"] = $id;
             $_SESSION["username"] = $username;
             
-            // ✅ Redirect to index.html
-            header("Location: http://localhost/myproject/frontend/index.html");
+    
+            echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Login successful! Redirecting to Home...</div>';
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+        </script>";
             exit;
         } else {
-            echo "<script>alert('Invalid password!'); window.location.href='login.html';</script>";
+            echo "<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Invalid password! Redirecting to login...</div>';
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 1000);
+        });
+    </script>";
             exit;
         }
     } else {
-        echo "<script>alert('No user found with this email!'); window.location.href='login.html';</script>";
+        echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">No user found with this email! Redirecting to login...</div>';
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 1000);
+    });
+</script>";;
         exit;
     }
 
