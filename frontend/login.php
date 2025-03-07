@@ -11,7 +11,7 @@ $username = "root";
 $password = "";
 
 $conn = new mysqli($host, $username, $password, $dbname);
-
+    
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
