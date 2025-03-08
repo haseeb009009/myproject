@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">User already registered! Redirecting to login...</div>';
                 setTimeout(function() {
                     window.location.href = 'login.html';
-                }, 1000);
+                }, 2000);
             });
         </script>";
         exit;
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Signup successful! Redirecting to login...</div>';
                 setTimeout(function() {
                     window.location.href = 'login.html';
-                }, 1000);
+                }, 2000);
             });
         </script>";
     } else {
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Error in registration! Please try again.</div>';
                 setTimeout(function() {
                     window.history.back();
-                }, 1000);
+                }, 2000);
             });
         </script>";
     }
