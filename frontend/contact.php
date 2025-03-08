@@ -1,9 +1,28 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["user_id"])) {
+    session_destroy(); // Clear session completely
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Needs to Login !  Redirecting to login...</div>';
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    });
+</script>";
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Team</title>
+    <title>Secret Coder : Contact</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -31,9 +50,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-
-
 </head>
 
 <body>
@@ -49,31 +65,36 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">ifiii-E-learning<span
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
                     style="color: #fb873f;"></span></p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="courses.php" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
 
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link"></a>
                 <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="logout.php" class="nav-item nav-link">logout</a>
+
                 <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
+
+                <div id="google_translate_element">
+                </div>
+
+
                 </a>
             </div>
         </div>
@@ -81,17 +102,16 @@
     <!-- Navbar End -->
 
 
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Our Team</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Contact</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Team</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
                         </ol>
                     </nav>
                 </div>
@@ -101,53 +121,92 @@
     <!-- Header End -->
 
 
-
-    <!-- Team Start -->
+    <!-- Contact Start -->
     <div class="container-xxl py-5">
         <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="mb-5 bg-white text-center px-3">Contact Us</h1>
+
+            </div>
             <div class="row g-4">
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden text-center pt-5">
-                            <img class="img-fluid" src="img/team-1.png" alt="" style="height: 500px; width: 300px;">
+                    <h5>Get In Touch</h5>
+                    <p class="mb-4">I'm happy to help! If you're looking for contact information or details about
+                        SecretCoder's online free courses website for e-learning, I don't have real-time browsing
+                        capabilities to access current websites or specific contact details.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 50px; height: 50px; background-color: #fb873f;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
                         </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="ifiiikhan826@gmail.com"><i class="fa fa-envelope"></i></a>
-                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="https://github.com/ifrahabib467"><i class="fab fa-github"></i></a>
-                            </div>
+                        <div class="ms-3">
+                            <h5>Office</h5>
+                            <p class="mb-0">123 Street, karachi</p>
                         </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Shehzad khan</h5>
-                            <small>Team Leader</small>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 50px; height: 50px; background-color: #fb873f;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5>Mobile</h5>
+                            <p class="mb-0">+923085791717</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
+                            style="width: 50px; height: 50px; background-color: #fb873f;">
+                            <i class="fa fa-envelope-open text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5>Email</h5>
+                            <p class="mb-0">ifiiikhan826@gmail.com</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden text-center pt-5">
-                            <img class="img-fluid" src="img/team-2.png" alt="" style="height: 500px; width: 300px;">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="ifiiikhan826@gmail.com"><i class="fa fa-envelope"></i></a>
-                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="https://github.com/ifrahabib467"><i class="fab fa-github"></i></a>
+
+                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" required placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" required
+                                        placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" required placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" required placeholder="Leave a message here"
+                                        id="message" style="height: 150px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit"><a
+                                        href="mailto:keertidvcorai@gmail.com" class="text-decoration-none"
+                                        style="color: #fff;" type="submit">Send Message</a></button>
                             </div>
                         </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">ifra habib</h5>
-                            <small>Team Member</small>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Contact End -->
 
 
     <!-- Footer Start -->
@@ -156,8 +215,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="about.php">About Us</a></p>
+                    <p><a class="text-light" href="contact.php">Contact Us</a></p>
                     <p><a class="text-light" href="">Privacy Policy</a></p>
                     <p><a class="text-light" href="">Terms & Condition</a></p>
                     <p><a class="text-light" href="">FAQs & Help</a></p>
@@ -194,7 +253,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
 
                     </div>
                 </div>

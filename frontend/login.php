@@ -1,7 +1,6 @@
 <?php
-session_start();  // Adjust path if needed
+session_start();  
 
-// Enable error reporting (REMOVE in production)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -44,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.addEventListener('DOMContentLoaded', function() {
                 document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Login successful! Redirecting to Home...</div>';
                 setTimeout(function() {
-                    window.location.href = 'index.html';
+                    window.location.href = 'index.php';
                 }, 2000);
             });
         </script>";

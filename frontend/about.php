@@ -1,9 +1,27 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["user_id"])) {
+    session_destroy(); // Clear session completely
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Needs to Login !  Redirecting to login...</div>';
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    });
+</script>";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Contact</title>
+    <title>Secret Coder : About Us</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -46,48 +64,52 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">ifiii-E-learning<span
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
                     style="color: #fb873f;"></span></p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="courses.php" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
 
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link"></a>
                 <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="logout.php" class="nav-item nav-link">logout</a>
+
                 <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
+
+                <div id="google_translate_element">
+                </div>
+
+
                 </a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Contact</h1>
+                    <h1 class="display-3 text-white animated slideInDown">About Us</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                         </ol>
                     </nav>
                 </div>
@@ -96,93 +118,72 @@
     </div>
     <!-- Header End -->
 
-
-    <!-- Contact Start -->
+    <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="mb-5 bg-white text-center px-3">Contact Us</h1>
+            <div class="row g-5">
 
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>Get In Touch</h5>
-                    <p class="mb-4">I'm happy to help! If you're looking for contact information or details about
-                        SecretCoder's online free courses website for e-learning, I don't have real-time browsing
-                        capabilities to access current websites or specific contact details.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
-                            style="width: 50px; height: 50px; background-color: #fb873f;">
-                            <i class="fa fa-map-marker-alt text-white"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>Office</h5>
-                            <p class="mb-0">123 Street, karachi</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
-                            style="width: 50px; height: 50px; background-color: #fb873f;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>Mobile</h5>
-                            <p class="mb-0">+923085791717</p>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="d-flex align-items-center justify-content-center flex-shrink-0"
-                            style="width: 50px; height: 50px; background-color: #fb873f;">
-                            <i class="fa fa-envelope-open text-white"></i>
-                        </div>
-                        <div class="ms-3">
-                            <h5>Email</h5>
-                            <p class="mb-0">ifiiikhan826@gmail.com</p>
-                        </div>
-                    </div>
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start pe-3">About Us</h6>
+                    <h1 class="mb-4" style="color: #fb873f;">Welcome to Secret Coder</h1>
+                    <p class="mb-4">
+                        At Secret Coder, we believe in accessible, innovative learning experiences that adapt to your
+                        schedule and learning style. Join us in embracing the future of education and unlock your
+                        potential with our immersive online courses.
+                    </p>
+                    <p class="mb-4">Welcome to Secret Coder, where learning knows no boundaries. Our mission
+                        is to empower individuals worldwide through accessible and innovative education. Here's what
+                        sets us apart:</p>
+
+                    <h3 class="mb-4">Our Vision</h3>
+                    <p class="mb-4">At Secret Coder, we envision a world where learning is accessible to everyone,
+                        regardless of their location, background, or circumstances. We strive to break barriers and make
+                        education a transformative and inclusive experience for all.</p>
+
+                    <h3 class="mb-4">A Commitment to Excellence</h3>
+                    <p class="mb-4"> We are dedicated to providing top-quality education. Our team collaborates with
+                        industry experts and educators to curate courses that meet the highest standards, ensuring our
+                        learners receive valuable and up-to-date knowledge.</p>
+
+                    <h3 class="mb-4">Empowering Learners</h3>
+
+                    <p class="mb-4">We believe in the transformative power of education. Secret Coder is
+                        designed to empower individuals to pursue their passions, advance their careers, and acquire new
+                        skills in a dynamic and supportive environment.</p>
+
+                    <h3 class="mb-4">Innovation in Learning</h3>
+
+                    <p class="mb-4">Embracing technology, we offer innovative learning methods and tools. From
+                        interactive modules to live sessions, we're committed to providing a cutting-edge learning
+                        experience that fosters engagement and knowledge retention.</p>
+
+                    <h3 class="mb-4">Community-Centric Approach</h3>
+
+                    <p class="mb-4"> Secret Coder is more than just courses; it's a vibrant community. We
+                        encourage collaboration, discussion, and knowledge sharing among learners, fostering an
+                        environment of growth and camaraderie.</p>
+
+                    <h3 class="mb-4">Diverse and Inclusive Education</h3>
+
+                    <p class="mb-4">We celebrate diversity in perspectives, cultures, and ideas. Our diverse course
+                        offerings cater to various interests and skill levels, ensuring that everyone finds a learning
+                        path that resonates with them.</p>
+
+                    <h3 class="mb-4">Continuous Improvement</h3>
+
+                    <p class="mb-4">We are always evolving. Feedback from our learners helps us continually enhance our
+                        platform, ensuring it remains dynamic, responsive, and aligned with the evolving needs of our
+                        users.</p>
+
+                    <p class=" mt-5 mb-4">Thank you! for being a part of Secret Coder. Together, let's embark on a
+                        journey of lifelong learning and growth.</p>
+
                 </div>
 
-                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" required placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" required
-                                        placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" required placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" required placeholder="Leave a message here"
-                                        id="message" style="height: 150px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit"><a
-                                        href="mailto:keertidvcorai@gmail.com" class="text-decoration-none"
-                                        style="color: #fff;" type="submit">Send Message</a></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    <!-- About End -->
 
 
     <!-- Footer Start -->
@@ -191,8 +192,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="about.php">About Us</a></p>
+                    <p><a class="text-light" href="contact.php">Contact Us</a></p>
                     <p><a class="text-light" href="">Privacy Policy</a></p>
                     <p><a class="text-light" href="">Terms & Condition</a></p>
                     <p><a class="text-light" href="">FAQs & Help</a></p>
@@ -229,7 +230,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">Secret Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
 
                     </div>
                 </div>
@@ -250,6 +251,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

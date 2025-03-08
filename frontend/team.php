@@ -1,9 +1,26 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["user_id"])) {
+    session_destroy(); // Clear session completely
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Needs to Login !  Redirecting to login...</div>';
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    });
+</script>";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Testimonial</title>
+    <title>Secret Coder : Team</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -33,6 +50,7 @@
     <link href="css/style.css" rel="stylesheet">
 
 
+
 </head>
 
 <body>
@@ -48,30 +66,36 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Ifiii-E-learning<span
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
                     style="color: #fb873f;"></span></p>
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            style="border: none;">
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="courses.php" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link"></a>
                 <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="logout.php" class="nav-item nav-link">logout</a>
+
                 <a href="#" class="nav-item nav-link">
-                    <div id="google_translate_element"></div>
+
+                <div id="google_translate_element">
+                </div>
+
+
                 </a>
             </div>
         </div>
@@ -85,11 +109,11 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Student Reviews</h1>
+                    <h1 class="display-3 text-white animated slideInDown">Our Team</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Reviews</li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Team</li>
                         </ol>
                     </nav>
                 </div>
@@ -99,58 +123,53 @@
     <!-- Header End -->
 
 
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center">
-                <h1 class=" bg-white text-center px-3" style="color: #fb873f;">Success stories</h1>
-                <p class="mb-5">Can Secret Coder courses help your career? Our learners tell us how.</p>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Sarah K.</h5>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">I stumbled upon Secret Coder while searching for free courses. The quality
-                            surpassed my expectations! The content was rich, and the instructors were knowledgeable.
-                            I've already recommended it to my friends.</p>
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden text-center pt-5">
+                            <img class="img-fluid" src="img/team-1.png" alt="" style="height: 500px; width: 300px;">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
+                                    href="ifiiikhan826@gmail.com"><i class="fa fa-envelope"></i></a>
+                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
+                                    href="https://github.com/ifrahabib467"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Shehzad khan</h5>
+                            <small>Team Leader</small>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John M.</h5>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">As a working professional, finding free courses that match my schedule was a
-                            game-changer. The courses are engaging, and the community aspect adds immense value. Highly
-                            recommended!</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">David P.</h5>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">I've taken multiple courses here, and each one has been fantastic. The
-                            platform's design makes learning enjoyable, and the knowledge gained is invaluable. It's
-                            hard to believe these courses are free!</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg"
-                        style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Lisa S.</h5>
-                    <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">I'm amazed at the quality of the free courses available. The instructors are
-                            experts in their fields, and the interactive lessons make learning a breeze. Thank you for
-                            this opportunity!</p>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden text-center pt-5">
+                            <img class="img-fluid" src="img/team-2.png" alt="" style="height: 500px; width: 300px;">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
+                                    href="ifiiikhan826@gmail.com"><i class="fa fa-envelope"></i></a>
+                                <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
+                                    href="https://github.com/ifrahabib467"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">ifra habib</h5>
+                            <small>Team Member</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
+    <!-- Team End -->
 
 
     <!-- Footer Start -->
@@ -159,8 +178,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="about.php">About Us</a></p>
+                    <p><a class="text-light" href="contact.php">Contact Us</a></p>
                     <p><a class="text-light" href="">Privacy Policy</a></p>
                     <p><a class="text-light" href="">Terms & Condition</a></p>
                     <p><a class="text-light" href="">FAQs & Help</a></p>
@@ -197,7 +216,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
 
                     </div>
                 </div>

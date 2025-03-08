@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["user_id"])) {
+    session_destroy(); // Clear session completely
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Needs to Login !  Redirecting to login...</div>';
+        setTimeout(function() {
+            window.location.href = 'login.html';
+        }, 2000);
+    });
+</script>";
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +70,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
                     style="color: #fb873f;"></span></p>
         </a>
@@ -59,19 +79,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="courses.html" class="nav-item nav-link">Courses</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="courses.php" class="nav-item nav-link">Courses</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
 
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link"></a>
                 <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="logout.php" class="nav-item nav-link">logout</a>
+
                 <a href="#" class="nav-item nav-link">
 
                 <div id="google_translate_element">
@@ -101,7 +123,7 @@
                                     online courses with certificates</h1>
                                 <p class=" text-white mb-4 pb-2">Explore a wide range of courses designed to enhance
                                     your expertise in technology, business, arts, and more. Start learning today!</p>
-                                <a href="about.html"
+                                <a href="about.php"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
                                     Now</a>
@@ -123,7 +145,7 @@
                                 </h1>
                                 <p class=" text-white mb-4 pb-2">Engage with interactive lessons, quizzes, and
                                     projects. Experience hands-on learning that keeps you motivated and inspired.</p>
-                                <a href="about.html"
+                                <a href="about.php"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
                                     Now</a>
@@ -231,7 +253,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right me-2"></i>Certification and Recognition</p>
                         </div>
                     </div>
-                    <a class="btn text-light py-3 px-5 mt-2" href="about.html">Read More</a>
+                    <a class="btn text-light py-3 px-5 mt-2" href="about.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -378,7 +400,7 @@
                         </div>
                         <div class="p-2 pb-0">
 
-                            <h5 class="mb-1"><a href="single.html" class="text-dark">HTML Course for Beginners </a></h5>
+                            <h5 class="mb-1"><a href="single.php" class="text-dark">HTML Course for Beginners </a></h5>
                         </div>
                         <div class="d-flex">
                             <small class="flex-fill text-center py-1 px-2"><i class="fa fa-star text-warning me-2"></i>
@@ -745,7 +767,7 @@
         </div>
     </div>
     <div class="container text-center">
-        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.html">All Courses</a>
+        <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.php">All Courses</a>
     </div>
     <!-- Courses End -->
 
@@ -769,7 +791,7 @@
                         <p class="mb-4 text-white">Instructors from around the world teach millions of learners on Udemy. We provide
                             the tools and skills to teach what you love.</p>
     
-                        <a class="btn text-light py-3 mt-2" href="instructor.html">Start Teaching Today</a>
+                        <a class="btn text-light py-3 mt-2" href="instructor.php">Start Teaching Today</a>
                     </div>
     
                 </div>
@@ -869,8 +891,8 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <p><a class="text-light" href="about.html">About Us</a></p>
-                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="about.php">About Us</a></p>
+                    <p><a class="text-light" href="contact.php">Contact Us</a></p>
                     <p><a class="text-light" href="">Privacy Policy</a></p>
                     <p><a class="text-light" href="">Terms & Condition</a></p>
                     <p><a class="text-light" href="">FAQs & Help</a></p>
@@ -907,7 +929,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
 
                     </div>
                 </div>
