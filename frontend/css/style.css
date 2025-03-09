@@ -5,6 +5,29 @@
     --light: #f0e4de;
     --dark: #181d38;
 }
+#msgBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #dc3545;
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    z-index: 1000;
+    opacity: 0.95;
+    text-align: center;
+    width: auto;
+    max-width: 80%;
+}
+
 
 .btn {
     background-color: #fb873f;

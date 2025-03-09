@@ -1,20 +1,4 @@
-<?php
-session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION["user_id"])) {
-    session_destroy(); // Clear session completely
-    echo "<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#dc3545; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Needs to Login !  Redirecting to login...</div>';
-        setTimeout(function() {
-            window.location.href = 'login.html';
-        }, 2000);
-    });
-</script>";
-    exit;
-}
-?>
+<?php include 'auth.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
