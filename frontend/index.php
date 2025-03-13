@@ -1,4 +1,4 @@
-<?php  ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,27 +61,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="index.php" class="nav-item nav-link ">Home</a>
                 <a href="courses.php" class="nav-item nav-link">Courses</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-
                     </div>
                 </div>
                 <a href="contact.php" class="nav-item nav-link"></a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <a href="logout.php" class="nav-item nav-link">logout</a>
-
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i>login</a>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="nav-item nav-link">Logout</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="profile.php" class="nav-item nav-link">Profile</a>
+                    <?php endif; ?>
+                <?php endif; ?>
                 <a href="#" class="nav-item nav-link">
-
                     <div id="google_translate_element">
                     </div>
-
-
                 </a>
             </div>
         </div>
@@ -107,8 +110,9 @@
                                     your expertise in technology, business, arts, and more. Start learning today!</p>
                                 <a href="about.php"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
-                                    Now</a>
+                                <?php if (!isset($_SESSION['user_id'])): ?>
+                                    <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -129,8 +133,10 @@
                                     projects. Experience hands-on learning that keeps you motivated and inspired.</p>
                                 <a href="about.php"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join
-                                    Now</a>
+                                <?php if (!isset($_SESSION['user_id'])): ?>
+                                    <a href="signup.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                     </div>
@@ -396,7 +402,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=1"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=1">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -426,7 +432,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=2"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=2">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -458,7 +464,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=3" >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=3">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -490,15 +496,15 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=4"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=4">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
-
         </div>
+
+    </div>
     </div>
     <div class="container text-center">
         <a class="btn text-light py-3 px-5 mt-2 mb-5" href="courses.php">All Courses</a>

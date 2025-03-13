@@ -1,49 +1,45 @@
 <?php
 session_start();
-$host = "localhost";
+$servername = "localhost";
+$username = "root";  // Change if needed
+$password = "";  // Change if needed
 $dbname = "lms";
-$username = "root";
-$password = "";
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
+
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('You need to log in first!'); window.location.href='login.html';</script>";
     exit;
 }
 
-// Check if course_id is provided
-if (!isset($_GET['course_id'])) {
-    echo "<script>alert('Invalid course selection!'); window.location.href='courses.php';</script>";
-    exit;
-}
-
-$course_id = $_GET['course_id'];
 $user_id = $_SESSION['user_id'];
 
-// Fetch course details
-$sql = "SELECT * FROM courses WHERE id = ?";
+// Fetch user details
+$sql = "SELECT username, email, created_at FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $course_id);
+$stmt->bind_param("i", $user_id);
 $stmt->execute();
-$result = $stmt->get_result();
+$user_result = $stmt->get_result();
+$user = $user_result->fetch_assoc();
 
-if ($result->num_rows > 0) {
-    $course = $result->fetch_assoc();
-} else {
-    echo "<script>alert('Course not found!'); window.location.href='courses.php';</script>";
-    exit;
-}
-$stmt->close();
+// Fetch enrolled courses
+$sql = "SELECT course_id, course_name FROM enrollments WHERE user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$course_result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
 
-
-<meta charset="utf-8">
-    <title>Secret Coder : Courses</title>
+    <title>ifiii Coder : Online Courses</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -72,20 +68,11 @@ $stmt->close();
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
-
-    <title><?php echo $course['title']; ?> - Course</title>
+    <title>User Profile</title>
 </head>
 <body>
 
-
-    <!-- <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div> -->
-            <!-- Navbar Start -->
+    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
@@ -125,55 +112,44 @@ $stmt->close();
         </div>
     </nav>
     <!-- Navbar End -->
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Courses</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
 
-<center>
     <div class="container">
-        <h1><?php echo $course['title']; ?></h1>
-        <p><?php echo $course['description']; ?></p>
-        
-        <!-- Course Video -->
-        <video width="100%" height="auto" controls>
-            <source src="<?php echo $course['video_url']; ?>" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <!-- Notepad Feature -->
-        <h3>Take Notes</h3>
-        <textarea id="notes" rows="6" cols="50" placeholder="Write your notes here..."></textarea>
+        <h1>MY PROFILE</h1>
+        <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
         <br>
-        <button onclick="downloadNotes()">Save Notes</button>
+        <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
+        <br>
+        <p><strong>Joined:</strong> <?php echo $user['created_at']; ?></p>
+        <br>
+        <hr>
+        
+        <h2>Enrolled Courses</h2>
+        <?php if ($course_result->num_rows > 0): ?>
+            <ul>
+                <?php while ($row = $course_result->fetch_assoc()): ?>
+                    <li>
+                        <strong><?php echo $row['course_name']; ?></strong>
+                        <a href="watch_course.php?course_id=<?php echo $row['course_id']; ?>" class="btn btn-primary">Continue Course</a>
+                        <br>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="course_id" value="<?php echo $row['course_id']; ?>">
+                            <button type="submit" name="unenroll" class="btn btn-danger">Unenroll</button>
+                        </form>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        <?php else: ?>
+            <p>You have not enrolled in any courses yet.</p>
+        <?php endif; ?>
+        
+        <h2>Account Settings</h2>
+        <a href="forgot_password.php" class="btn btn-warning">Reset Password</a>
+        <a href="logout.php" class="btn btn-warning">Logout</a>
     </div>
-</center>
-    <script>
-        function downloadNotes() {
-            let notes = document.getElementById("notes").value;
-            let blob = new Blob([notes], { type: "text/plain" });
-            let link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "Course_Notes.txt";
-            link.click();
-        }
-    </script>
 
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
@@ -225,9 +201,9 @@ $stmt->close();
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
 
 
 </body>

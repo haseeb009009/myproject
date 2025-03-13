@@ -58,27 +58,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About</a>
+                <a href="index.php" class="nav-item nav-link ">Home</a>
                 <a href="courses.php" class="nav-item nav-link">Courses</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-
                     </div>
                 </div>
                 <a href="contact.php" class="nav-item nav-link"></a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
-                <a href="logout.php" class="nav-item nav-link">logout</a>
-
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i>login</a>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="logout.php" class="nav-item nav-link">Logout</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="profile.php" class="nav-item nav-link">Profile</a>
+                    <?php endif; ?>
+                <?php endif; ?>
                 <a href="#" class="nav-item nav-link">
-
-                <div id="google_translate_element">
-                </div>
-
-
+                    <div id="google_translate_element">
+                    </div>
                 </a>
             </div>
         </div>
@@ -232,13 +235,13 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=1" >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=1">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
                 </div>
-                    <!-- Courses end -->
-                
+                <!-- Courses end -->
+
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="course-item shadow">
                         <div class="position-relative overflow-hidden text-light image">
@@ -266,7 +269,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=2"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=2">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -298,7 +301,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=3"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=3">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -330,7 +333,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=4"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=4">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -362,7 +365,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=5"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=5">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -394,7 +397,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=6"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=6">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -426,7 +429,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=7"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=7">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -458,7 +461,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 149</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=8"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=8">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -489,7 +492,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=9"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=9">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -521,7 +524,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=10"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=10">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -553,7 +556,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=11"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=11">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -585,7 +588,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=12"   >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=12">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
