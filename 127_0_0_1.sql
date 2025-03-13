@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2025 at 08:26 AM
+-- Generation Time: Mar 13, 2025 at 04:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -26,6 +26,62 @@ USE `lms`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `courses`
+--
+
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `instructor` varchar(255) NOT NULL,
+  `duration` varchar(50) NOT NULL,
+  `price` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `video_url` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `title`, `description`, `instructor`, `duration`, `price`, `video_url`) VALUES
+(1, 'HTML Course for Beginners', 'learn HTML  for from scratch.', 'John Doe', '2.0', 0.00, 'videos/php_intro.mp4'),
+(2, 'Front End Development-CSS', 'Introduction to Front End Development-CSS', 'Jane Smith', '4.55', 10.00, 'videos/js_basics.mp4'),
+(3, 'Introduction to JavaScript', 'Learn JavaScript', 'John Doe', '2.5', 0.00, 'videos/php_intro.mp4'),
+(4, 'Python Programming', 'Introduction to Python programming.', 'Jane Smith', '3.5', 10.00, 'videos/js_basics.mp4'),
+(5, 'SQL for Data Science', 'LearnSQL from scratch.', 'John Doe', '2.0', 0.00, 'videos/php_intro.mp4'),
+(6, 'ChatGPT for Beginners', 'learn how to use ChatGPT ', 'Jane Smith', '3.5', 10.00, 'videos/js_basics.mp4'),
+(7, 'AWS for Beginners', 'Learn AWS from scratch.', 'John Doe', '2.0', 0.00, 'videos/php_intro.mp4'),
+(8, 'Microsoft Azure Essentials', 'learn Microsoft Azure Essentials', 'Jane Smith', '3.5', 10.00, 'videos/js_basics.mp4'),
+(9, 'Introduction to MS Excel', 'Learn how  to use  MS Excel', 'John Doe', '2.0', 0.00, 'videos/php_intro.mp4'),
+(10, 'Statistics For Data Science', 'learn Statistics For Data Science', 'Jane Smith', '3.5', 10.00, 'videos/js_basics.mp4'),
+(11, 'Java Programming', 'Learn Java Programming', 'John Doe', '2.0', 0.00, 'videos/php_intro.mp4'),
+(12, 'C for Beginners', 'learn C Programming language', 'Jane Smith', '3.5', 10.00, 'videos/js_basics.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enrollments`
+--
+
+CREATE TABLE `enrollments` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `course_name` varchar(255) NOT NULL,
+  `enrolled_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `enrollments`
+--
+
+INSERT INTO `enrollments` (`id`, `user_id`, `user_email`, `course_id`, `course_name`, `enrolled_at`) VALUES
+(5, 45, 'haseebrehnnnnman6375@gmail.com', 3, 'Introduction to JavaScript', '2025-03-13 03:45:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -43,11 +99,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `reset_token`) VALUES
-(43, 'haseebrehman6375@gmail.com', 'haseebrehman6375@gmail.com', 'SSSSSS', '2025-03-09 06:02:38', NULL);
+(45, 'haseebrehnnnnman6375@gmail.com', 'haseebrehnnnnman6375@gmail.com', 'haseebrehnnnnman6375@gmail.com', '2025-03-12 02:14:28', NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `courses`
+--
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `enrollments`
+--
+ALTER TABLE `enrollments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `course_id` (`course_id`);
 
 --
 -- Indexes for table `users`
@@ -61,10 +130,32 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `courses`
+--
+ALTER TABLE `courses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `enrollments`
+--
+ALTER TABLE `enrollments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `enrollments`
+--
+ALTER TABLE `enrollments`
+  ADD CONSTRAINT `enrollments_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
 --
 -- Database: `phpmyadmin`
 --
@@ -214,7 +305,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"lms\",\"table\":\"users\"},{\"db\":\"secret_coder\",\"table\":\"users\"},{\"db\":\"secret_coder_db\",\"table\":\"users\"},{\"db\":\"myproject\",\"table\":\"users\"},{\"db\":\"user_db\",\"table\":\"users\"}]');
+('root', '[{\"db\":\"lms\",\"table\":\"users\"},{\"db\":\"lms\",\"table\":\"enrollments\"},{\"db\":\"lms\",\"table\":\"courses\"},{\"db\":\"secret_coder\",\"table\":\"users\"},{\"db\":\"secret_coder_db\",\"table\":\"users\"},{\"db\":\"myproject\",\"table\":\"users\"},{\"db\":\"user_db\",\"table\":\"users\"}]');
 
 -- --------------------------------------------------------
 
@@ -285,6 +376,13 @@ CREATE TABLE `pma__table_uiprefs` (
   `last_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
 
+--
+-- Dumping data for table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'lms', 'users', '{\"CREATE_TIME\":\"2025-03-09 10:54:16\",\"col_order\":[0,2,1,3,4,5],\"col_visib\":[1,1,1,1,1,1]}', '2025-03-13 02:00:01');
+
 -- --------------------------------------------------------
 
 --
@@ -321,7 +419,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2025-03-09 07:25:35', '{\"Console\\/Mode\":\"collapse\",\"Server\\/hide_db\":\"\",\"Server\\/only_db\":\"\"}');
+('root', '2025-03-13 03:50:00', '{\"Console\\/Mode\":\"collapse\",\"Server\\/hide_db\":\"\",\"Server\\/only_db\":\"\",\"NavigationWidth\":201}');
 
 -- --------------------------------------------------------
 
