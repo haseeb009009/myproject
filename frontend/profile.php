@@ -29,7 +29,51 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $course_result = $stmt->get_result();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['unenroll'])) {
+    $course_id = $_POST['course_id'];
+    
+    // Remove enrollment from the database
+    $sql = "DELETE FROM enrollments WHERE user_id = ? AND course_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $user_id, $course_id);
+    $stmt->execute();
+    
+    echo "<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let msgBox = document.createElement('div');
+        msgBox.id = 'msgBox';
+        msgBox.innerHTML = '&#9888; You have been unenrolled from the course.';
+        msgBox.style.position = 'fixed';
+        msgBox.style.top = '50%';
+        msgBox.style.left = '50%';
+        msgBox.style.transform = 'translate(-50%, -50%)';
+        msgBox.style.background = '#fb873f';
+        msgBox.style.color = '#fff';
+        msgBox.style.padding = '16px 28px';
+        msgBox.style.borderRadius = '10px';
+        msgBox.style.fontSize = '18px';
+        msgBox.style.fontWeight = 'bold';
+        msgBox.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+        msgBox.style.display = 'flex';
+        msgBox.style.alignItems = 'center';
+        msgBox.style.justifyContent = 'center';
+        msgBox.style.gap = '12px';
+        msgBox.style.zIndex = '1000';
+        msgBox.style.opacity = '0.95';
+        msgBox.style.textAlign = 'center';
+        msgBox.style.width = 'auto';
+        msgBox.style.maxWidth = '80%';
+        document.body.appendChild(msgBox);
+        setTimeout(function() {
+            window.location.href = 'profile.php';
+        }, 2000);
+    });
+</script>";
+    exit;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -113,38 +157,41 @@ $course_result = $stmt->get_result();
     </nav>
     <!-- Navbar End -->
 
-    <div class="container">
-        <h1>MY PROFILE</h1>
-        <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
-        <br>
-        <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
-        <br>
-        <p><strong>Joined:</strong> <?php echo $user['created_at']; ?></p>
-        <br>
-        <hr>
-        
-        <h2>Enrolled Courses</h2>
-        <?php if ($course_result->num_rows > 0): ?>
-            <ul>
-                <?php while ($row = $course_result->fetch_assoc()): ?>
-                    <li>
-                        <strong><?php echo $row['course_name']; ?></strong>
-                        <a href="watch_course.php?course_id=<?php echo $row['course_id']; ?>" class="btn btn-primary">Continue Course</a>
-                        <br>
-                        <form method="POST" style="display:inline;">
-                            <input type="hidden" name="course_id" value="<?php echo $row['course_id']; ?>">
-                            <button type="submit" name="unenroll" class="btn btn-danger">Unenroll</button>
-                        </form>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        <?php else: ?>
-            <p>You have not enrolled in any courses yet.</p>
-        <?php endif; ?>
-        
-        <h2>Account Settings</h2>
-        <a href="forgot_password.php" class="btn btn-warning">Reset Password</a>
-        <a href="logout.php" class="btn btn-warning">Logout</a>
+    <div class="container mt-5">
+        <div class="card shadow p-4">
+            <h1 class="text-center">MY PROFILE</h1>
+            <hr>
+            <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
+            <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
+            <p><strong>Joined:</strong> <?php echo $user['created_at']; ?></p>
+            
+            <hr>
+            <h2>Enrolled Courses</h2>
+            <?php if ($course_result->num_rows > 0): ?>
+                <ul class="list-group">
+                    <?php while ($row = $course_result->fetch_assoc()): ?>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong><?php echo $row['course_name']; ?></strong>
+                            <div>
+                                <a href="watch_course.php?course_id=<?php echo $row['course_id']; ?>" class="btn btn-primary btn-sm">Continue Course</a>
+                                <form method="POST" style="display:inline;">
+                                    <input type="hidden" name="course_id" value="<?php echo $row['course_id']; ?>">
+                                    <button type="submit" name="unenroll" class="btn btn-danger btn-sm">Unenroll</button>
+                                </form>
+                            </div>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php else: ?>
+                <p class="text-muted">You have not enrolled in any courses yet.</p>
+            <?php endif; ?>
+            
+            <hr>
+            <h2>Account Settings</h2>
+            <a href="forgot_password.php" class="btn btn-danger">Reset Password</a>
+            <br>
+            <a href="logout.php" class="btn btn-danger">Logout</a>
+        </div>
     </div>
 
 

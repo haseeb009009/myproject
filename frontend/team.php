@@ -118,7 +118,7 @@
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden text-center pt-5">
-                            <img class="img-fluid" src="img/team-1.png" alt="" style="height: 500px; width: 300px;">
+                            <img class="img-fluid" src="" alt="" style="height: 500px; width: 300px;">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Shehzad khan</h5>
+                            <h5 class="mb-0">HASEEB-UR-REHMAN</h5>
                             <small>Team Leader</small>
                         </div>
                     </div>
@@ -137,14 +137,14 @@
                 <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden text-center pt-5">
-                            <img class="img-fluid" src="img/team-2.png" alt="" style="height: 500px; width: 300px;">
+                            <img class="img-fluid" src="" alt="" style="height: 500px; width: 300px;">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="ifiiikhan826@gmail.com"><i class="fa fa-envelope"></i></a>
+                                    href=""><i class="fa fa-envelope"></i></a>
                                 <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href="https://github.com/ifrahabib467"><i class="fab fa-github"></i></a>
+                                    href="https://github.com/haseeb009009"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">

@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 msgBox.style.top = '50%';
                 msgBox.style.left = '50%';
                 msgBox.style.transform = 'translate(-50%, -50%)';
-                msgBox.style.background = '#28a745';
+                msgBox.style.background = '#fb873f';
                 msgBox.style.color = '#fff';
                 msgBox.style.padding = '16px 28px';
                 msgBox.style.borderRadius = '10px';
