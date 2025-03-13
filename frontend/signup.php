@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // User already exists - Show message and redirect
         echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
-                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">User already registered! Redirecting to login...</div>';
+                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#fb873f; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">User already registered! Redirecting to login...</div>';
                 setTimeout(function() {
                     window.location.href = 'login.html';
                 }, 2000);
@@ -61,13 +61,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Signup successful - Show message and redirect
         echo "<script>
-            document.addEventListener('DOMContentLoaded', function() {
-                document.body.innerHTML += '<div id=\"msgBox\" style=\"position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#28a745; color:#fff; padding:10px 20px; border-radius:5px; font-size:16px; z-index:1000;\">Signup successful! Redirecting to login...</div>';
-                setTimeout(function() {
-                    window.location.href = 'login.html';
-                }, 2000);
-            });
-        </script>";
+        document.addEventListener('DOMContentLoaded', function() {
+            let msgBox = document.createElement('div');
+            msgBox.id = 'msgBox';
+            msgBox.innerHTML = '&#9888; Signup successful! Redirecting to login...';
+            msgBox.style.position = 'fixed';
+            msgBox.style.top = '50%';
+            msgBox.style.left = '50%';
+            msgBox.style.transform = 'translate(-50%, -50%)';
+            msgBox.style.background = '#fb873f';
+            msgBox.style.color = '#fff';
+            msgBox.style.padding = '16px 28px';
+            msgBox.style.borderRadius = '10px';
+            msgBox.style.fontSize = '18px';
+            msgBox.style.fontWeight = 'bold';
+            msgBox.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+            msgBox.style.display = 'flex';
+            msgBox.style.alignItems = 'center';
+            msgBox.style.justifyContent = 'center';
+            msgBox.style.gap = '12px';
+            msgBox.style.zIndex = '1000';
+            msgBox.style.opacity = '0.95';
+            msgBox.style.textAlign = 'center';
+            msgBox.style.width = 'auto';
+            msgBox.style.maxWidth = '80%';
+            document.body.appendChild(msgBox);
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+    </script>";
     } else {
         // Error - Show message and redirect back
         echo "<script>
