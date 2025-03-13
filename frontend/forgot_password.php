@@ -55,8 +55,8 @@ if (isset($_POST['reset_request'])) {
             msgBox.style.top = '50%';
             msgBox.style.left = '50%';
             msgBox.style.transform = 'translate(-50%, -50%)';
-            msgBox.style.background = '#dc3545';
-            msgBox.style.color = '#fff';
+            msgBox.style.background = '#fb873f';
+            msgBox.style.color = 'black';
             msgBox.style.padding = '16px 28px';
             msgBox.style.borderRadius = '10px';
             msgBox.style.fontSize = '18px';
@@ -125,8 +125,8 @@ if (isset($_POST['update_password'])) {
             msgBox.style.top = '50%';
             msgBox.style.left = '50%';
             msgBox.style.transform = 'translate(-50%, -50%)';
-            msgBox.style.background = '#28a745';
-            msgBox.style.color = '#fff';
+            msgBox.style.background = '#fb873f';
+            msgBox.style.color = 'black';
             msgBox.style.padding = '16px 28px';
             msgBox.style.borderRadius = '10px';
             msgBox.style.fontSize = '18px';

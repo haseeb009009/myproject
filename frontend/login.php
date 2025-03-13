@@ -1,5 +1,5 @@
 <?php
-session_start();  
+session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -10,7 +10,7 @@ $username = "root";
 $password = "";
 
 $conn = new mysqli($host, $username, $password, $dbname);
-    
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
@@ -34,11 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_result($id, $username, $db_password);
         $stmt->fetch();
 
-        if ($password === $db_password) { 
+        if ($password === $db_password) {
             $_SESSION["user_id"] = $id;
             $_SESSION["username"] = $username;
-            
-    
+
+
             echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
                 let msgBox = document.createElement('div');
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 msgBox.style.left = '50%';
                 msgBox.style.transform = 'translate(-50%, -50%)';
                 msgBox.style.background = '#fb873f';
-                msgBox.style.color = '#fff';
+            msgBox.style.color = 'black';
                 msgBox.style.padding = '16px 28px';
                 msgBox.style.borderRadius = '10px';
                 msgBox.style.fontSize = '18px';
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 msgBox.style.left = '50%';
                 msgBox.style.transform = 'translate(-50%, -50%)';
                 msgBox.style.background = '#fb873f';
-                msgBox.style.color = '#fff';
+                msgBox.style.color = 'black';
                 msgBox.style.padding = '16px 28px';
                 msgBox.style.borderRadius = '10px';
                 msgBox.style.fontSize = '18px';
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             msgBox.style.left = '50%';
             msgBox.style.transform = 'translate(-50%, -50%)';
             msgBox.style.background = '#fb873f';
-            msgBox.style.color = '#fff';
+            msgBox.style.color = 'black';
             msgBox.style.padding = '16px 28px';
             msgBox.style.borderRadius = '10px';
             msgBox.style.fontSize = '18px';
@@ -143,4 +143,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 $conn->close();
-?>

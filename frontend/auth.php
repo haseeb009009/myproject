@@ -14,7 +14,7 @@ if (!isset($_SESSION["user_id"])) {
         msgBox.style.left = '50%';
         msgBox.style.transform = 'translate(-50%, -50%)';
         msgBox.style.background = '#fb873f';
-        msgBox.style.color = '#fff';
+            msgBox.style.color = 'black';
         msgBox.style.padding = '16px 28px';
         msgBox.style.borderRadius = '10px';
         msgBox.style.fontSize = '18px';

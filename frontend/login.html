@@ -70,12 +70,12 @@
                 </div>
                 <a href="contact.php" class="nav-item nav-link"></a>
                 <?php if (!isset($_SESSION['user_id'])): ?>
-                    <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i>login</a>
+                    <a href="" class="nav-item nav-link"></a>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="logout.php" class="nav-item nav-link">Logout</a>
+                    <a href="logout.php" class="nav-item nav-link"></a>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="profile.php" class="nav-item nav-link">Profile</a>
+                        <a href="profile.php" class="nav-item nav-link"></a>
                     <?php endif; ?>
                 <?php endif; ?>
                 <a href="#" class="nav-item nav-link">
