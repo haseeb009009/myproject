@@ -396,7 +396,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=1" onclick="alert('Redirecting to Course ID: 1')">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=1"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -426,7 +426,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=2" onclick="alert('Redirecting to Course ID: 2')">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=2"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -458,7 +458,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=3" onclick="alert('Redirecting to Course ID: 3')">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=3" >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>
@@ -490,7 +490,7 @@
                                 Hrs</small>
                             <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
-                                <a href="course_details.php?course_id=4" onclick="alert('Redirecting to Course ID: 4')">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
+                                <a href="course_details.php?course_id=4"  >Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
                         </div>
                     </div>

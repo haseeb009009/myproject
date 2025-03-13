@@ -58,7 +58,7 @@ $stmt->execute();
 $stmt->store_result();
 
 if ($stmt->num_rows > 0) {
-    echo "<script>alert('You are already enrolled in this course!'); window.location.href='watch_course.php?course_id=$course_id';</script>";
+    echo "<script> window.location.href='watch_course.php?course_id=$course_id';</script>";
     exit;
 }
 $stmt->close();
@@ -70,6 +70,6 @@ $stmt->bind_param("isss", $user_id, $user_email, $course_id, $course_name);
 $stmt->execute();
 
 // Redirect to the course page
-echo "<script>alert('Enrollment successful! Redirecting to your course...'); window.location.href='watch_course.php?course_id=$course_id';</script>";
+echo "<script> window.location.href='watch_course.php?course_id=$course_id';</script>";
 exit;
 ?>
