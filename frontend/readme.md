@@ -44,8 +44,4 @@ Before you begin, ensure you have the following prerequisites:
 - Bootstrap 5
 - JavaScript
 
-## Contributing 
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](/issues).
-
-## Show your support 
