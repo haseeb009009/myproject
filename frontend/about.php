@@ -1,17 +1,19 @@
-<?php include 'auth.php'; ?>
+<?php 
+// include 'auth.php';
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : About Us</title>
+    <title>CourseCraft  : About Us</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconn.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +51,11 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
-                    style="color: #fb873f;"></span></p>
+            <img src="img/iconn.png" alt="" height="50px">
+            <div class="ms-2">
+            <p class="m-0 fw-bold" style="font-size: 25px;">CourseCraft</p>
+            <p class="m-0" style="font-size: 12px;">E-learning platform</p>
+            </div>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -64,6 +69,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
                         <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
@@ -112,18 +118,18 @@
 
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start pe-3">About Us</h6>
-                    <h1 class="mb-4" style="color: #fb873f;">Welcome to Secret Coder</h1>
+                    <h1 class="mb-4" style="color: #fb873f;">Welcome to CourseCraft </h1>
                     <p class="mb-4">
-                        At Secret Coder, we believe in accessible, innovative learning experiences that adapt to your
+                        At CourseCraft , we believe in accessible, innovative learning experiences that adapt to your
                         schedule and learning style. Join us in embracing the future of education and unlock your
                         potential with our immersive online courses.
                     </p>
-                    <p class="mb-4">Welcome to Secret Coder, where learning knows no boundaries. Our mission
+                    <p class="mb-4">Welcome to CourseCraft , where learning knows no boundaries. Our mission
                         is to empower individuals worldwide through accessible and innovative education. Here's what
                         sets us apart:</p>
 
                     <h3 class="mb-4">Our Vision</h3>
-                    <p class="mb-4">At Secret Coder, we envision a world where learning is accessible to everyone,
+                    <p class="mb-4">At CourseCraft , we envision a world where learning is accessible to everyone,
                         regardless of their location, background, or circumstances. We strive to break barriers and make
                         education a transformative and inclusive experience for all.</p>
 
@@ -134,7 +140,7 @@
 
                     <h3 class="mb-4">Empowering Learners</h3>
 
-                    <p class="mb-4">We believe in the transformative power of education. Secret Coder is
+                    <p class="mb-4">We believe in the transformative power of education. CourseCraft  is
                         designed to empower individuals to pursue their passions, advance their careers, and acquire new
                         skills in a dynamic and supportive environment.</p>
 
@@ -146,7 +152,7 @@
 
                     <h3 class="mb-4">Community-Centric Approach</h3>
 
-                    <p class="mb-4"> Secret Coder is more than just courses; it's a vibrant community. We
+                    <p class="mb-4"> CourseCraft  is more than just courses; it's a vibrant community. We
                         encourage collaboration, discussion, and knowledge sharing among learners, fostering an
                         environment of growth and camaraderie.</p>
 
@@ -162,7 +168,7 @@
                         platform, ensuring it remains dynamic, responsive, and aligned with the evolving needs of our
                         users.</p>
 
-                    <p class=" mt-5 mb-4">Thank you! for being a part of Secret Coder. Together, let's embark on a
+                    <p class=" mt-5 mb-4">Thank you! for being a part of CourseCraft . Together, let's embark on a
                         journey of lifelong learning and growth.</p>
 
                 </div>
@@ -189,7 +195,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, karachi</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+923085791717</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ifiiikhan826@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>CourseCraft@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -217,7 +223,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">CourseCraft</a>, All Right Reserved.
 
                     </div>
                 </div>

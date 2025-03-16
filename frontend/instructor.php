@@ -5,13 +5,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Instructor</title>
+    <title>CourseCraft  : Instructor</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconn.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +50,11 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
-                    style="color: #fb873f;"></span></p>
+            <img src="img/iconn.png" alt="" height="50px">
+            <div class="ms-2">
+            <p class="m-0 fw-bold" style="font-size: 25px;">CourseCraft</p>
+            <p class="m-0" style="font-size: 12px;">E-learning platform</p>
+            </div>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -65,6 +68,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
                         <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
@@ -116,7 +120,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>Welcome to SecretCoder - Where Knowledge Meets Innovation</h5>
+                    <h5>Welcome to CourseCraft - Where Knowledge Meets Innovation</h5>
                     <p class="mb-4">Are you passionate about sharing your expertise and making a real impact on learners worldwide? If so, we invite you to become an instructor on our dynamic e-learning platform! Join a community of educators dedicated to fostering a love for learning and empowering individuals to achieve their goals.</p>
                    
                     
@@ -137,7 +141,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     
-                    <h1 class="mb-4" style="color: #fb873f;">Why Choose SecretCoder as Your Teaching Hub?</h1>
+                    <h1 class="mb-4" style="color: #fb873f;">Why Choose CourseCraft as Your Teaching Hub?</h1>
                     
                     <div class="row gy-2 gx-4 mb-4">
                         <ul style="list-style: none;">
@@ -246,7 +250,7 @@
                     
                     <div class="row gy-2 gx-4 mb-4">
                         <ul style="list-style: none;">
-                            <li><i class="fa fa-check"></i> Familiarize yourself with Secret Coder and the diverse range of courses we offer.</li>
+                            <li><i class="fa fa-check"></i> Familiarize yourself with CourseCraft  and the diverse range of courses we offer.</li>
                             <li><i class="fa fa-check"></i> Craft a compelling application that showcases your passion, expertise, and proposed course offerings.</li>
                            
                         </ul>
@@ -271,7 +275,7 @@
         </div>
         <div class="modal-body">
             <form>
-                <h5 class="mb-4">Join SecretCoder's Global Community
+                <h5 class="mb-4">Join CourseCraft's Global Community
                     of Expert Instructors</h5>
                 <div class="row g-3">
                     <div class="col-md-6">
@@ -363,7 +367,7 @@
                     
                     <h5 class="mb-4">Join Us in Transforming Lives Through Education!</h5>
                     
-                    <p>At SecretCoder, we believe that education has the power to transform lives. Join us in creating a world where knowledge knows no bounds, and together, let's inspire, innovate, and educate!</p>
+                    <p>At CourseCraft, we believe that education has the power to transform lives. Join us in creating a world where knowledge knows no bounds, and together, let's inspire, innovate, and educate!</p>
                     
                 </div>
 
@@ -393,7 +397,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, karachi</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+923085791717</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ifiiikhan826@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>CourseCraft@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -421,7 +425,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">CourseCraft</a>, All Right Reserved.
 
                     </div>
                 </div>

@@ -5,13 +5,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Courses</title>
+    <title>CourseCraft : Courses</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconn.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,8 +50,11 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
-                    style="color: #fb873f;"></span></p>
+            <img src="img/iconn.png" alt="" height="50px">
+            <div class="ms-2">
+            <p class="m-0 fw-bold" style="font-size: 25px;">CourseCraft</p>
+            <p class="m-0" style="font-size: 12px;">E-learning platform</p>
+            </div>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -65,6 +68,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
                         <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
@@ -233,7 +237,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=1">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -267,7 +271,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=2">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -299,7 +303,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=3">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -331,7 +335,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=4">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -363,7 +367,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>5.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=5">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -395,7 +399,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=6">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -427,7 +431,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=7">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -459,7 +463,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 149</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=8">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -490,7 +494,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=9">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -522,7 +526,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=10">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -554,7 +558,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"> </small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=11">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -586,7 +590,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>1.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"></small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=12">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -616,7 +620,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, karachi</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+923085791717</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ifiiikhan826@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>CourseCraft@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -644,7 +648,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">CourseCraft</a>, All Right Reserved.
 
                     </div>
                 </div>

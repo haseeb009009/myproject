@@ -8,13 +8,13 @@
     <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
     </meta>
 
-    <title>ifiii Coder : Online Courses</title>
+    <title>CourseCraft : HOME</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconn.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,8 +53,11 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
-                    style="color: #fb873f;"></span></p>
+            <img src="img/iconn.png" alt="" height="50px">
+            <div class="ms-2">
+            <p class="m-0 fw-bold" style="font-size: 25px;">CourseCraft</p>
+            <p class="m-0" style="font-size: 12px;">E-learning platform</p>
+            </div>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -68,6 +71,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
                         <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
@@ -126,7 +130,7 @@
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class=" text-uppercase mb-3 animated slideInDown" style="color: #fb873f;">Welcome to
-                                    Secret Coder</h5>
+                                    CourseCraft </h5>
                                 <h1 class="display-3 text-white animated slideInDown">Interactive Learning Experience
                                 </h1>
                                 <p class=" text-white mb-4 pb-2">Engage with interactive lessons, quizzes, and
@@ -152,7 +156,7 @@
         <div class="container">
             <div class="row g-2 text-center">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
-                    <h1 style="color: #fb873f;">Invest in your professional goals with Secret Coder</h1>
+                    <h1 style="color: #fb873f;">Invest in your professional goals with CourseCraft </h1>
                     <p class="mb-5">Get unlimited access to over 90% of courses, Projects, Specializations, and
                         Professional Certificates on Coursera, taught by top instructors.</p>
                 </div>
@@ -213,11 +217,11 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start pe-3">About Us</h6>
-                    <h1 class="mb-4" style="color: #fb873f;">Welcome to Secret Coder</h1>
-                    <p class="mb-4">At Secret Coder, we believe in accessible, innovative learning experiences that
+                    <h1 class="mb-4" style="color: #fb873f;">Welcome to CourseCraft </h1>
+                    <p class="mb-4">At CourseCraft , we believe in accessible, innovative learning experiences that
                         adapt to your schedule and learning style. Join us in embracing the future of education and
                         unlock your potential with our immersive online courses.</p>
-                    <p class="mb-4"> Welcom to Secret Coder, your gateway to boundless learning opportunities. We're
+                    <p class="mb-4"> Welcom to CourseCraft , your gateway to boundless learning opportunities. We're
                         dedicated to democratizing education, offering a diverse range of courses taught by industry
                         experts. Our mission is to empower learners worldwide, fostering a community-driven platform
                         where knowledge knows no limits.</p>
@@ -400,7 +404,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"></small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=1">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -430,7 +434,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>4.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 199</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"></small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=2">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -462,7 +466,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.5
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 0</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"></small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=3">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -494,7 +498,7 @@
                         <div class="d-flex">
                             <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>3.0
                                 Hrs</small>
-                            <small class="py-1 px-2 fw-bold fs-6 text-center">₹ 299</small>
+                            <small class="py-1 px-2 fw-bold fs-6 text-center"></small>
                             <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;">
                                 <a href="course_details.php?course_id=4">Enroll Now</a><i class="fa fa-chevron-right me-2 fs-10"></i>
                             </small>
@@ -553,12 +557,12 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is the Secret Coder ?
+                                    What is the CourseCraft  ?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    The Secret Coder is an initiative taken by Secret Coder, where we offer 1000+ free online courses in cutting-edge technologies and have successfully enrolled a whopping 5 Million+ learners across all domains. Secret Coder covers courses on Data Science, Machine Learning, Artificial Intelligence, Cloud Computing, Software Development, Sales and Business Development, Digital Marketing, Big Data, and many more.
+                                    The CourseCraft  is an initiative taken by CourseCraft , where we offer 1000+ free online courses in cutting-edge technologies and have successfully enrolled a whopping 5 Million+ learners across all domains. CourseCraft  covers courses on Data Science, Machine Learning, Artificial Intelligence, Cloud Computing, Software Development, Sales and Business Development, Digital Marketing, Big Data, and many more.
                                 </div>
                             </div>
                         </div>
@@ -582,7 +586,7 @@
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    You can simultaneously enroll in multiple courses at Secret Coder.
+                                    You can simultaneously enroll in multiple courses at CourseCraft .
                                 </div>
                             </div>
                         </div>
@@ -601,14 +605,14 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    What are the most popular free courses offered by Secret Coder ?
+                                    What are the most popular free courses offered by CourseCraft  ?
                                 </button>
                             </h2>
                             <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    Secret Coder focuses on in-demand concepts and skills, where learners can develop industry-relevant knowledge in their chosen sector. It provides a wide range of courses in prestigious fields, assisting learners across the globe in achieving their professional goals.
+                                    CourseCraft  focuses on in-demand concepts and skills, where learners can develop industry-relevant knowledge in their chosen sector. It provides a wide range of courses in prestigious fields, assisting learners across the globe in achieving their professional goals.
 
-                                    <p>Some of the most popular free courses offered by Secret Coder that are in high demand today include:</p>
+                                    <p>Some of the most popular free courses offered by CourseCraft  that are in high demand today include:</p>
                                     <ul>
                                         <li>Free Data Science Courses</li>
                                         <li>Free Artificial Intelligence Courses</li>
@@ -641,7 +645,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, karachi</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+923085791717</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ifiiikhan826@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>CourseCraft@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -669,7 +673,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">CourseCraft</a>, All Right Reserved.
 
                     </div>
                 </div>

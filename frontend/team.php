@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Secret Coder : Team</title>
+    <title>CourseCraft  : Team</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/icon.png" rel="icon">
+    <link href="img/iconn.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,8 +51,11 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px"> ifiii-E-learning<span
-                    style="color: #fb873f;"></span></p>
+            <img src="img/iconn.png" alt="" height="50px">
+            <div class="ms-2">
+            <p class="m-0 fw-bold" style="font-size: 25px;">CourseCraft</p>
+            <p class="m-0" style="font-size: 12px;">E-learning platform</p>
+            </div>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -66,6 +69,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="team.php" class="dropdown-item">Our Team</a>
+                        <a href="contact.php" class="dropdown-item">Contact</a>
                         <a href="instructor.php" class="dropdown-item">Our instructors</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
@@ -129,8 +133,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">HASEEB-UR-REHMAN</h5>
-                            <small>Team Leader</small>
+                            <h5 class="mb-0">ifra habib</h5>
+                            <small>Team Member</small>
                         </div>
                     </div>
                 </div>
@@ -142,14 +146,14 @@
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
-                                    href=""><i class="fa fa-envelope"></i></a>
+                                    href="CourseCraft@gmail.com"><i class="fa fa-envelope"></i></a>
                                 <a target="_blank" class="btn btn-sm-square btn-primary mx-1"
                                     href="https://github.com/haseeb009009"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">ifra habib</h5>
-                            <small>Team Member</small>
+                            <h5 class="mb-0">HASEEB-UR-REHMAN</h5>
+                            <small>Team Leader</small>
                         </div>
                     </div>
                 </div>
@@ -175,7 +179,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, karachi</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+923085791717</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ifiiikhan826@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>CourseCraft@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -203,7 +207,7 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">ifiii Coder</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="index.php">CourseCraft</a>, All Right Reserved.
 
                     </div>
                 </div>
