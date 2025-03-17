@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2025 at 04:51 AM
+-- Generation Time: Mar 17, 2025 at 04:47 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -72,13 +72,6 @@ CREATE TABLE `enrollments` (
   `enrolled_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `enrollments`
---
-
-INSERT INTO `enrollments` (`id`, `user_id`, `user_email`, `course_id`, `course_name`, `enrolled_at`) VALUES
-(5, 45, 'haseebrehnnnnman6375@gmail.com', 3, 'Introduction to JavaScript', '2025-03-13 03:45:50');
-
 -- --------------------------------------------------------
 
 --
@@ -95,13 +88,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `reset_token`) VALUES
-(45, 'haseebrehnnnnman6375@gmail.com', 'haseebrehnnnnman6375@gmail.com', 'haseebrehnnnnman6375@gmail.com', '2025-03-12 02:14:28', NULL);
-
---
 -- Indexes for dumped tables
 --
 
@@ -116,7 +102,8 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `enrollments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `fk_user_enrollment` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -139,13 +126,13 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- Constraints for dumped tables
@@ -155,7 +142,8 @@ ALTER TABLE `users`
 -- Constraints for table `enrollments`
 --
 ALTER TABLE `enrollments`
-  ADD CONSTRAINT `enrollments_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`);
+  ADD CONSTRAINT `enrollments_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`),
+  ADD CONSTRAINT `fk_user_enrollment` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 --
 -- Database: `phpmyadmin`
 --
@@ -305,7 +293,7 @@ CREATE TABLE `pma__recent` (
 --
 
 INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"lms\",\"table\":\"users\"},{\"db\":\"lms\",\"table\":\"enrollments\"},{\"db\":\"lms\",\"table\":\"courses\"},{\"db\":\"secret_coder\",\"table\":\"users\"},{\"db\":\"secret_coder_db\",\"table\":\"users\"},{\"db\":\"myproject\",\"table\":\"users\"},{\"db\":\"user_db\",\"table\":\"users\"}]');
+('root', '[{\"db\":\"lms\",\"table\":\"courses\"},{\"db\":\"lms\",\"table\":\"enrollments\"},{\"db\":\"lms\",\"table\":\"users\"},{\"db\":\"secret_coder\",\"table\":\"users\"},{\"db\":\"secret_coder_db\",\"table\":\"users\"},{\"db\":\"myproject\",\"table\":\"users\"},{\"db\":\"user_db\",\"table\":\"users\"}]');
 
 -- --------------------------------------------------------
 
@@ -381,7 +369,7 @@ CREATE TABLE `pma__table_uiprefs` (
 --
 
 INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
-('root', 'lms', 'users', '{\"CREATE_TIME\":\"2025-03-09 10:54:16\",\"col_order\":[0,2,1,3,4,5],\"col_visib\":[1,1,1,1,1,1]}', '2025-03-13 02:00:01');
+('root', 'lms', 'users', '{\"CREATE_TIME\":\"2025-03-09 10:54:16\"}', '2025-03-17 00:47:00');
 
 -- --------------------------------------------------------
 
@@ -419,7 +407,7 @@ CREATE TABLE `pma__userconfig` (
 --
 
 INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2025-03-13 03:50:00', '{\"Console\\/Mode\":\"collapse\",\"Server\\/hide_db\":\"\",\"Server\\/only_db\":\"\",\"NavigationWidth\":201}');
+('root', '2025-03-17 03:46:34', '{\"Console\\/Mode\":\"collapse\"}');
 
 -- --------------------------------------------------------
 
