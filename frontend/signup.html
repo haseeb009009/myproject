@@ -76,9 +76,9 @@
                     <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i>login</a>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="logout.php" class="nav-item nav-link">Logout</a>
+                    <a href="logout.php" class="nav-item nav-link"></a>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="profile.php" class="nav-item nav-link">Profile</a>
+                        <a href="profile.php" class="nav-item nav-link"></a>
                     <?php endif; ?>
                 <?php endif; ?>
                 <a href="#" class="nav-item nav-link">
@@ -96,12 +96,6 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 text-center">
                         <h1 class="display-3 text-white animated slideInDown">Signup</h1>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                <li class="breadcrumb-item text-white active" aria-current="page">Signup</li>
-                            </ol>
-                        </nav>
                     </div>
                 </div>
             </div>

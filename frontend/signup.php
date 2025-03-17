@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.addEventListener('DOMContentLoaded', function() {
             let msgBox = document.createElement('div');
             msgBox.id = 'msgBox';
-            msgBox.innerHTML = '&#9888; Signup successful! Redirecting to login...';
+            msgBox.innerHTML = '&#10004; Signup successful! Redirecting to login...';
             msgBox.style.position = 'fixed';
             msgBox.style.top = '50%';
             msgBox.style.left = '50%';

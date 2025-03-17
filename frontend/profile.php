@@ -159,9 +159,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['unenroll'])) {
     </nav>
     <!-- Navbar End -->
 
+        <!-- Header Start -->
+        <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">PROFILE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
     <div class="container mt-5">
         <div class="card shadow p-4">
-            <h1 class="text-center">MY PROFILE</h1>
+            <h1 class="text-center">Account Details</h1>
             <hr>
             <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
             <p><strong>Email:</strong> <?php echo $user['email']; ?></p>

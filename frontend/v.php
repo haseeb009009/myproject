@@ -57,7 +57,7 @@ while ($row = $result->fetch_array()) {
     </style>
 </head>
 <body>
-
+<h2>JUST FOR TESTING </h2>
 <h2>Database Tables & Data</h2>
 
 <?php foreach ($tables as $table): ?>

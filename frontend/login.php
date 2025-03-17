@@ -43,18 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             document.addEventListener('DOMContentLoaded', function() {
                 let msgBox = document.createElement('div');
                 msgBox.id = 'msgBox';
-                msgBox.innerHTML = '&#9888; Login successful! Redirecting to Home...';
+                msgBox.innerHTML = '&#10004; Login successful! Redirecting to Home...';
                 msgBox.style.position = 'fixed';
                 msgBox.style.top = '50%';
                 msgBox.style.left = '50%';
                 msgBox.style.transform = 'translate(-50%, -50%)';
                 msgBox.style.background = '#fb873f';
-            msgBox.style.color = 'black';
+                msgBox.style.color = 'black';
                 msgBox.style.padding = '16px 28px';
                 msgBox.style.borderRadius = '10px';
                 msgBox.style.fontSize = '18px';
                 msgBox.style.fontWeight = 'bold';
-                msgBox.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.3)';
+                msgBox.style.boxShadow = '0 6px 12px rgb(0, 0, 0)';
                 msgBox.style.display = 'flex';
                 msgBox.style.alignItems = 'center';
                 msgBox.style.justifyContent = 'center';
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.body.appendChild(msgBox);
                 setTimeout(function() {
                     window.location.href = 'index.php';
-                }, 2000);
+                }, 1000);
             });
         </script>";
             exit;

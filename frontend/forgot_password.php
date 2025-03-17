@@ -120,7 +120,7 @@ if (isset($_POST['update_password'])) {
         document.addEventListener('DOMContentLoaded', function() {
             let msgBox = document.createElement('div');
             msgBox.id = 'msgBox';
-            msgBox.innerHTML = '&#9888; Password updated successfully!';
+            msgBox.innerHTML = '&#10004; Password updated successfully!';
             msgBox.style.position = 'fixed';
             msgBox.style.top = '50%';
             msgBox.style.left = '50%';
@@ -218,12 +218,6 @@ if (isset($_POST['update_password'])) {
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <h1 class="display-3 text-white animated slideInDown">forgot Password</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html"></a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page"></li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </div>
