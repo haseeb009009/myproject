@@ -73,15 +73,6 @@
                     </div>
                 </div>
                 <a href="contact.php" class="nav-item nav-link"></a>
-                <?php if (!isset($_SESSION['user_id'])): ?>
-                    <a href="" class="nav-item nav-link"></a>
-                <?php endif; ?>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="logout.php" class="nav-item nav-link"></a>
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <a href="profile.php" class="nav-item nav-link"></a>
-                    <?php endif; ?>
-                <?php endif; ?>
                 <a href="#" class="nav-item nav-link">
                     <div id="google_translate_element">
                     </div>
