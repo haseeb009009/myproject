@@ -32,7 +32,7 @@ if (!isset($_SESSION["user_id"])) {
         document.body.appendChild(msgBox);
         setTimeout(function() {
             window.location.href = 'login.html';
-        }, 2000);
+        }, 1000);
     });
 </script>";
     exit;
