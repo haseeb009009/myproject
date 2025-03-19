@@ -66,7 +66,7 @@ if (isset($_POST['reset_request'])) {
                 document.body.appendChild(msgBox);
                 setTimeout(function() {
                     window.location.href = 'forgot_password.php';
-                }, 2000);
+                }, 1000);
             });
         </script>";
             exit;
@@ -123,7 +123,7 @@ if (isset($_POST['reset_request'])) {
             document.body.appendChild(msgBox);
             setTimeout(function() {
                 window.location.href = 'forgot_password.php';
-            }, 2000);
+            }, 1000);
         });
     </script>";
         exit;
@@ -198,7 +198,7 @@ if (isset($_POST['update_password'])) {
                 document.body.appendChild(msgBox);
                 setTimeout(function() {
                     window.location.href = 'profile.php';
-                }, 2000);
+                }, 1000);
             });
         </script>";
     } else {
@@ -229,8 +229,8 @@ if (isset($_POST['update_password'])) {
                 msgBox.style.maxWidth = '80%';
                 document.body.appendChild(msgBox);
                 setTimeout(function() {
-                    window.location.href = 'login.html';
-                }, 2000);
+                window.location.href = 'login.html';
+                }, 1000);
             });
         </script>";
     }
