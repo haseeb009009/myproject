@@ -156,7 +156,7 @@ $stmt->close();
         <h3>Take Notes</h3>
         <textarea id="notes" rows="6" cols="50" placeholder="Write your notes here..."></textarea>
         <br>
-        <button onclick="downloadNotes()">Save Notes</button>
+        <button class="btn text-light w-10 py-1" onclick="downloadNotes()">Save Notes</button>
     </div>
 </center>
     <script>
